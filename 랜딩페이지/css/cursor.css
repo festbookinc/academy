@@ -1,0 +1,99 @@
+/* Custom animated cursor — pointer: fine only (JS adds html.is-custom-cursor) */
+
+:root {
+  --cursor-hotspot-default-x: 2;
+  --cursor-hotspot-default-y: 2;
+  --cursor-hotspot-hover-x: 4;
+  --cursor-hotspot-hover-y: 30;
+  /* 클릭 핫스팟은 유지, quill 깃펜 끝만 위로 보정 */
+  --cursor-hover-img-offset-y: -6px;
+  --cursor-sway-default: 7deg;
+  --cursor-sway-hover: 9deg;
+  --cursor-sway-duration-default: 1.8s;
+  --cursor-sway-duration-hover: 2.1s;
+}
+
+@media (pointer: fine) {
+  html.is-custom-cursor,
+  html.is-custom-cursor * {
+    cursor: none !important;
+  }
+
+  html.is-custom-cursor.is-custom-cursor--text,
+  html.is-custom-cursor.is-custom-cursor--text * {
+    cursor: text !important;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  will-change: transform;
+}
+
+.custom-cursor.is-visible {
+  opacity: 1;
+}
+
+.custom-cursor.is-hidden {
+  opacity: 0;
+}
+
+.custom-cursor__inner {
+  display: block;
+  transform-origin: var(--cursor-hotspot-default-x) var(--cursor-hotspot-default-y);
+  animation: cursor-sway-default var(--cursor-sway-duration-default) ease-in-out infinite;
+}
+
+.custom-cursor--hover .custom-cursor__inner {
+  transform-origin: var(--cursor-hotspot-hover-x) var(--cursor-hotspot-hover-y);
+  animation-name: cursor-sway-hover;
+  animation-duration: var(--cursor-sway-duration-hover);
+}
+
+.custom-cursor__img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.custom-cursor__img--hover {
+  display: none;
+}
+
+.custom-cursor--hover .custom-cursor__img--default {
+  display: none;
+}
+
+.custom-cursor--hover .custom-cursor__img--hover {
+  display: block;
+  transform: translateY(var(--cursor-hover-img-offset-y));
+}
+
+@keyframes cursor-sway-default {
+  0%, 100% { transform: rotate(calc(var(--cursor-sway-default) * -1)); }
+  50% { transform: rotate(var(--cursor-sway-default)); }
+}
+
+@keyframes cursor-sway-hover {
+  0%, 100% { transform: rotate(calc(var(--cursor-sway-hover) * -1)); }
+  50% { transform: rotate(var(--cursor-sway-hover)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor__inner {
+    animation: none;
+  }
+}
+
+html[data-motion="off"] .custom-cursor__inner {
+  animation: none;
+}

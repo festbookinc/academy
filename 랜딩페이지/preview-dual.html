@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dual Preview — 다시, 봄</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="preview/preview-dual.css">
+</head>
+<body>
+
+<header class="preview-toolbar">
+  <p class="preview-toolbar__title">다시, 봄 · <span>Dual Preview</span></p>
+  <p class="preview-toolbar__hint"><code>index.html</code> · CSS · JS를 수정한 뒤 ↻ 새로고침</p>
+  <div class="preview-toolbar__actions">
+    <div class="preview-view-modes" role="group" aria-label="미리보기 레이아웃">
+      <button type="button" class="preview-view-modes__btn is-active" data-view="both" aria-pressed="true">동시 보기</button>
+      <button type="button" class="preview-view-modes__btn" data-view="mobile" aria-pressed="false">Mobile</button>
+      <button type="button" class="preview-view-modes__btn" data-view="desktop" aria-pressed="false">Desktop</button>
+    </div>
+    <button type="button" class="preview-btn preview-btn--primary" id="btn-refresh">↻ 새로고침</button>
+    <a class="preview-btn" href="index.html" target="_blank" rel="noopener">index 열기</a>
+  </div>
+</header>
+
+<div class="preview-grid" id="preview-grid" data-view="both">
+  <section class="preview-pane preview-pane--mobile" aria-label="모바일 미리보기">
+    <div class="preview-pane__head">
+      <span class="preview-pane__label">Mobile</span>
+      <span class="preview-pane__meta">390 × 844 · iPhone 14/15</span>
+    </div>
+    <div class="preview-pane__frame-wrap" id="mobile-fit">
+      <div class="preview-device-scaler" id="mobile-scaler">
+        <div class="preview-device">
+          <iframe id="frame-mobile" title="모바일 미리보기" src="index.html"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="preview-pane preview-pane--desktop" aria-label="데스크탑 미리보기">
+    <div class="preview-pane__head">
+      <span class="preview-pane__label">Desktop</span>
+      <span class="preview-pane__meta">768px 컨테이너</span>
+    </div>
+    <div class="preview-pane__frame-wrap">
+      <iframe id="frame-desktop" title="데스크탑 미리보기" src="index.html"></iframe>
+    </div>
+  </section>
+</div>
+
+<script src="preview/preview-dual.js"></script>
+</body>
+</html>

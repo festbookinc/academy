@@ -1,0 +1,50 @@
+/* ═══════════════════════════════════════
+   MyLight (Direction I) — design tokens
+   프로덕션 고정 컬러 (Style Lab V4 최종 선택값)
+   메인 #E55710 · CTA #FF3355 · 배경 마이라이트 · Stats #322B24
+═══════════════════════════════════════ */
+
+:root {
+  --font-body: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+  --font-display: 'Pretendard Variable', Pretendard, sans-serif;
+
+  --bg: #FFFFFF;
+  /* 레퍼런스 LP 파스텔 밴드 (하늘 / 노랑 / 분홍) */
+  --bg-soft-blue: #EAF1FF;
+  --bg-soft-yellow: #FFF8E1;
+  --bg-soft-pink: #FFEDF2;
+  --bg-soft: var(--bg-soft-blue);
+  --ink: #111111;
+  --ink-soft: #444444;
+  --muted: #888888;
+  --accent: #FF3355;
+  --accent-rgb: 255, 51, 85;
+  --accent-dark: #E6003A;
+  --accent-warm: #E55710;
+  --accent-warm-rgb: 229, 87, 16;
+  --accent-warm-dark: #E85A0A;
+  --line: #D8E4F5;
+  --i-avatar-ring: rgba(15, 23, 42, 0.1);
+  --card: #FFFFFF;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  --hero-title-color: #FFFFFF;
+
+  --container-max: 768px;
+  --section-pad-y: 100px;
+  --section-title-pt: 0;
+  --section-title-mb: 44px;
+  --body-size: 17px;
+  --card-title-size: clamp(18px, 2.5vw, 22px);
+  --card-body-size: 14px;
+  --accordion-title-size: 16px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --body-size: 16px;
+    --card-title-size: 20px;
+    --card-body-size: 16px;
+  }
+}

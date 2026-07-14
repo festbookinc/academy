@@ -1,0 +1,82 @@
+/* 포트폴리오 — 3D 캐러셀 + 커버플로우 카드 UI */
+html[data-theme="i-mylight"] .section--i-cases {
+  background: var(--bg-soft-yellow);
+}
+html[data-theme="i-mylight"] .cases-3d__scene {
+  height: clamp(500px, 70vw, 580px);
+}
+html[data-theme="i-mylight"] .section--i-cases .cases-card {
+  text-align: left;
+  width: min(308px, 82vw);
+  padding: 12px 26px;
+  gap: 0;
+  overflow: hidden;
+}
+html[data-theme="i-mylight"] .section--i-cases .cases-card .showcase-card__img {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  margin: 0 0 10px;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 0;
+}
+html[data-theme="i-mylight"] .section--i-cases .cases-card .showcase-card__img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+html[data-theme="i-mylight"] .section--i-cases .cases-card .showcase-card__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+html[data-theme="i-mylight"] .section--i-cases .cases-card .showcase-card__name {
+  font-size: var(--card-title-size);
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 4px;
+  text-align: center;
+}
+html[data-theme="i-mylight"] .section--i-cases .cases-card .showcase-card__meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-warm);
+  margin: 0 0 6px;
+  text-align: center;
+}
+html[data-theme="i-mylight"] .section--i-cases .cases-card .showcase-card__hook {
+  font-size: var(--card-body-size);
+  line-height: 1.72;
+  color: var(--ink-soft);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+html[data-theme="i-mylight"] .section--i-cases .cases-card .showcase-card__hook--quote {
+  font-style: italic;
+}
+html[data-theme="i-mylight"] .i-cases__cta {
+  text-align: center;
+  margin: 28px 0 6px;
+}
+
+html[data-theme="i-mylight"] .i-cases__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  justify-content: center;
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+html[data-theme="i-mylight"] .i-cases__links a {
+  color: var(--accent-warm);
+  text-decoration: none;
+}
+html[data-theme="i-mylight"] .i-cases__links a:hover {
+  color: var(--accent);
+}

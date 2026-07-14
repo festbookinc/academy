@@ -1,0 +1,91 @@
+/* Stakes · site footer */
+html[data-theme="i-mylight"] .section--i-stakes {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background: #0a0c10;
+  text-align: center;
+}
+html[data-theme="i-mylight"] .section--i-stakes .i-stakes__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+html[data-theme="i-mylight"] .section--i-stakes .i-stakes__inner {
+  position: relative;
+  z-index: 2;
+}
+html[data-theme="i-mylight"] .section--i-stakes .i-stakes__title {
+  margin-bottom: 0;
+  max-width: none;
+}
+html[data-theme="i-mylight"] .section--i-stakes .i-stakes__hl {
+  color: var(--accent-warm);
+  font-style: normal;
+}
+html[data-theme="i-mylight"] .section--i-stakes .i-stakes__title-br {
+  display: block;
+}
+html[data-theme="i-mylight"] .section--i-stakes .i-stakes__title-space {
+  display: none;
+}
+html[data-theme="i-mylight"] .site-footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 40px 24px;
+}
+html[data-theme="i-mylight"] .site-footer__brand {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+html[data-theme="i-mylight"] .site-footer__meta {
+  font-size: 13px;
+  line-height: 1.7;
+}
+html[data-theme="i-mylight"] .site-footer a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+html[data-theme="i-mylight"] .footer-award {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0 auto 18px;
+  padding: 9px 18px 9px 11px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.18), rgba(201, 162, 39, 0.06));
+  border: 1.5px solid rgba(201, 162, 39, 0.5);
+}
+html[data-theme="i-mylight"] .footer-award__trophy {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  color: #c9a227;
+}
+html[data-theme="i-mylight"] .footer-award__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+html[data-theme="i-mylight"] .footer-award__title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #e8c75a;
+  letter-spacing: -0.02em;
+}
+html[data-theme="i-mylight"] .footer-award__sub {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+}
+html[data-theme="i-mylight"] .section__title,
+html[data-theme="i-mylight"] .section__lead,
+html[data-theme="i-mylight"] .hero__title {
+  word-break: keep-all;
+}

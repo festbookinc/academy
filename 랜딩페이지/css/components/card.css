@@ -1,0 +1,455 @@
+/* Card components — pillar, i-diff row (l2), promise-card, showcase-card */
+
+/* Pillars — POINT 밴드 (연하늘) */
+.section--pillars {
+  background: var(--bg-soft-blue);
+}
+
+html[data-theme="i-mylight"] .pillars--3col {
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+@media (min-width: 768px) {
+  html[data-theme="i-mylight"] .pillars--3col {
+    gap: 24px;
+  }
+}
+
+html[data-theme="i-mylight"] .pillar {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px 26px 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+html[data-theme="i-mylight"] .pillar__head {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+html[data-theme="i-mylight"] .section--pillars .pillar__head .pillar__num {
+  text-align: center;
+  margin-bottom: calc(14px * 0.7);
+}
+html[data-theme="i-mylight"] .section--pillars .pillar__title {
+  min-height: auto;
+  margin-bottom: 0;
+}
+html[data-theme="i-mylight"] .pillar__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding-bottom: 20px;
+}
+@media (min-width: 768px) {
+  html[data-theme="i-mylight"] .section--pillars .pillar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(132px, 0.52fr);
+    grid-template-areas:
+      "head head"
+      "body media";
+    align-items: center;
+    gap: 18px 28px;
+    padding: 24px 28px;
+    text-align: left;
+  }
+  html[data-theme="i-mylight"] .section--pillars .pillar__head {
+    grid-area: head;
+    align-self: center;
+    text-align: center;
+  }
+  html[data-theme="i-mylight"] .section--pillars .pillar__head .pillar__num {
+    text-align: center;
+    margin-bottom: calc(10px * 0.7);
+  }
+  html[data-theme="i-mylight"] .section--pillars .pillar__title {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  html[data-theme="i-mylight"] .section--pillars .pillar__body {
+    grid-area: body;
+    padding-bottom: 0;
+    align-self: center;
+  }
+  html[data-theme="i-mylight"] .section--pillars .pillar__media {
+    grid-area: media;
+    width: 100%;
+    max-width: 180px;
+    margin: 0;
+    justify-self: end;
+    align-self: center;
+  }
+}
+html[data-theme="i-mylight"] .pillar:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+html[data-theme="i-mylight"] .pillar__media {
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+html[data-theme="i-mylight"] .pillar__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+html[data-theme="i-mylight"] .pillar__num {
+  display: block;
+  font-size: 0;
+  font-weight: 700;
+  color: var(--accent-warm);
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+html[data-theme="i-mylight"] .pillar__num::before,
+html[data-theme="i-mylight"] .pillar__num::after {
+  color: var(--accent-warm);
+}
+html[data-theme="i-mylight"] .pillar__num::before {
+  content: 'POINT ';
+  font-size: 13px;
+}
+html[data-theme="i-mylight"] .pillar:nth-child(1) .pillar__num::after {
+  content: '01';
+  font-size: 13px;
+}
+html[data-theme="i-mylight"] .pillar:nth-child(2) .pillar__num::after {
+  content: '02';
+  font-size: 13px;
+}
+html[data-theme="i-mylight"] .pillar:nth-child(3) .pillar__num::after {
+  content: '03';
+  font-size: 13px;
+}
+
+.pillar__title {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--card-title-size);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+html[data-theme="i-mylight"] .pillar__title {
+  font-weight: 800;
+  font-size: var(--card-title-size);
+  color: var(--ink);
+  line-height: 1.45;
+  margin-bottom: 12px;
+  text-align: center;
+  min-height: calc(2 * 1.45em);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pillar__text {
+  font-family: var(--font-body);
+  font-size: var(--card-body-size);
+  line-height: 1.78;
+  color: var(--ink-soft);
+  max-width: 520px;
+  margin: 0 auto;
+}
+html[data-theme="i-mylight"] .pillar__text {
+  flex: 1 1 auto;
+  max-width: none;
+  font-size: var(--card-body-size);
+  line-height: 1.72;
+  text-align: left;
+}
+.pillar__text strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+html[data-theme="i-mylight"] .i-diff__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+html[data-theme="i-mylight"] .i-diff__row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px 22px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+html[data-theme="i-mylight"] .i-diff__main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+html[data-theme="i-mylight"] .i-diff__media {
+  flex-shrink: 0;
+  height: 80px;
+  width: calc(80px * 5 / 3);
+  aspect-ratio: 5 / 3;
+  border-radius: 8px;
+  background: #e6e6e6;
+}
+html[data-theme="i-mylight"] .i-diff__num {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent-warm);
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  padding-top: 0;
+}
+html[data-theme="i-mylight"] .i-diff__body > strong {
+  display: block;
+  font-size: var(--card-title-size);
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+html[data-theme="i-mylight"] .i-diff__body p {
+  font-size: var(--card-body-size);
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin: 0;
+}
+html[data-theme="i-mylight"] .i-diff__body em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+}
+html[data-theme="i-mylight"] .i-diff__body p strong {
+  display: inline;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Layout 2 · 좌문 우图 */
+html[data-theme="i-mylight"] .i-diff__main--l2 {
+  display: grid;
+  grid-template-columns: 1fr calc(80px * 5 / 3);
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 639px) {
+  html[data-theme="i-mylight"] .i-diff__media {
+    height: 72px;
+    width: calc(72px * 5 / 3);
+  }
+  html[data-theme="i-mylight"] .i-diff__main--l2 {
+    grid-template-columns: 1fr calc(72px * 5 / 3);
+  }
+}
+
+/* 12주 후 약속 — 3D 카드 캐러셀 */
+html[data-theme="i-mylight"] .promise-3d {
+  margin-top: 4px;
+  overflow: visible;
+}
+html[data-theme="i-mylight"] .promise-3d__controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: visible;
+}
+html[data-theme="i-mylight"] .promise-3d__viewport {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: visible;
+}
+html[data-theme="i-mylight"] .promise-3d__scene {
+  position: relative;
+  height: clamp(430px, 62vw, 500px);
+  overflow: visible;
+}
+html[data-theme="i-mylight"] .promise-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(300px, 78vw);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px 26px 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transform-origin: center center;
+  transition:
+    transform 1s cubic-bezier(0.33, 1, 0.68, 1),
+    opacity 1s cubic-bezier(0.33, 1, 0.68, 1),
+    filter 1s cubic-bezier(0.33, 1, 0.68, 1),
+    box-shadow 1s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform, opacity, filter;
+}
+html[data-theme="i-mylight"] .promise-card.is-active {
+  box-shadow:
+    0 6px 20px rgba(17, 17, 17, 0.16),
+    0 18px 44px rgba(17, 17, 17, 0.26);
+}
+html[data-theme="i-mylight"] .promise-3d__arrow {
+  flex: 0 0 auto;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent-warm);
+  cursor: pointer;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+html[data-theme="i-mylight"] .promise-card.is-side {
+  cursor: pointer;
+}
+@media (min-width: 640px) {
+  html[data-theme="i-mylight"] .promise-3d__controls {
+    display: block;
+  }
+  html[data-theme="i-mylight"] .promise-3d__viewport {
+    width: 100%;
+    cursor: default;
+  }
+}
+html[data-theme="i-mylight"] .promise-3d__arrow:hover {
+  color: var(--accent-dark);
+  opacity: 0.85;
+}
+html[data-theme="i-mylight"] .promise-3d__icon {
+  display: block;
+  width: 12px;
+  height: 28px;
+}
+html[data-theme="i-mylight"] .promise-3d__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+html[data-theme="i-mylight"] .promise-3d__dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(17, 17, 17, 0.18);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+html[data-theme="i-mylight"] .promise-3d__dot.is-active {
+  background: var(--accent-warm);
+  transform: scale(1.2);
+}
+@media (max-width: 719px) {
+  html[data-theme="i-mylight"] .promise-3d {
+    /* 100vw는 스크롤바 너비까지 포함해 우측 여백(가로 스크롤)을 만듦 */
+    width: auto;
+    max-width: none;
+    margin-left: calc(-1 * var(--container-pad, 24px));
+    margin-right: calc(-1 * var(--container-pad, 24px));
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  html[data-theme="i-mylight"] .promise-3d__viewport {
+    overflow: hidden;
+  }
+}
+@media (max-width: 639px) {
+  html[data-theme="i-mylight"] .promise-3d__controls {
+    position: relative;
+    gap: 0;
+  }
+  html[data-theme="i-mylight"] .promise-3d__arrow {
+    display: inline-flex;
+    position: absolute;
+    top: 50%;
+    z-index: 30;
+    transform: translateY(-50%);
+  }
+  html[data-theme="i-mylight"] .promise-3d__arrow--prev {
+    left: 8px;
+  }
+  html[data-theme="i-mylight"] .promise-3d__arrow--next {
+    right: 8px;
+  }
+  html[data-theme="i-mylight"] .promise-3d__scene {
+    height: clamp(400px, 118vw, 460px);
+  }
+  html[data-theme="i-mylight"] .promise-card {
+    width: min(280px, 72vw);
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  html[data-theme="i-mylight"] .cases-3d__scene {
+    height: clamp(440px, 118vw, 520px);
+  }
+  html[data-theme="i-mylight"] .section--i-cases .cases-card {
+    width: min(292px, 78vw);
+    padding: 12px 22px;
+  }
+}
+
+/* showcase — 공통 카드 */
+html[data-theme="i-mylight"] .showcase-card__img {
+  background: transparent;
+  overflow: visible;
+  border-radius: 0;
+}
+html[data-theme="i-mylight"] .showcase-card__img img {
+  object-fit: contain;
+  display: block;
+}
+html[data-theme="i-mylight"] .showcase-card__body {
+  min-width: 0;
+  overflow: hidden;
+}
+html[data-theme="i-mylight"] .showcase-card__name {
+  font-size: var(--card-title-size);
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+html[data-theme="i-mylight"] .showcase-card__meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-warm);
+  margin: 0 0 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+html[data-theme="i-mylight"] .showcase-card__hook {
+  font-size: var(--card-body-size);
+  line-height: 1.72;
+  color: var(--ink-soft);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+html[data-theme="i-mylight"] .showcase-card__hook--quote {
+  font-style: italic;
+}

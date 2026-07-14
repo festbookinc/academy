@@ -1,0 +1,12 @@
+/* Shared card surface — background, border, shadow (radius in component files) */
+
+html[data-theme="i-mylight"] .pillar,
+html[data-theme="i-mylight"] .i-diff__row,
+html[data-theme="i-mylight"] .promise-card,
+html[data-theme="i-mylight"] .i-curriculum__part,
+html[data-theme="i-mylight"] .i-faq__item,
+html[data-theme="i-mylight"] .i-bookstore__photo {
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}

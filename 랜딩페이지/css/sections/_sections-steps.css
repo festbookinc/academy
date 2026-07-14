@@ -1,0 +1,30 @@
+/* 결제 후 플로우 */
+html[data-theme="i-mylight"] .section--i-steps {
+  background: var(--bg);
+}
+html[data-theme="i-mylight"] .section--i-steps .i-diff__list {
+  text-align: left;
+}
+@media (min-width: 720px) {
+  html[data-theme="i-mylight"] .section--i-steps .i-diff__row {
+    align-items: center;
+  }
+}
+@media (max-width: 719px) {
+  html[data-theme="i-mylight"] .section--i-steps .i-diff__list--steps {
+    gap: 12px;
+  }
+  html[data-theme="i-mylight"] .section--i-steps .i-diff__list--steps .i-diff__row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  html[data-theme="i-mylight"] .section--i-steps .i-diff__list--steps .i-diff__main {
+    display: contents;
+  }
+  html[data-theme="i-mylight"] .section--i-steps .i-diff__list--steps .i-diff__body {
+    display: contents;
+  }
+  html[data-theme="i-mylight"] .section--i-steps .i-diff__list--steps .i-diff__body > strong {
+    margin-bottom: -6px;
+  }
+}

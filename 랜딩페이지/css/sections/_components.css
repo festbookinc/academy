@@ -1,0 +1,90 @@
+/* i-diff section — quotes & section shell (cards in components/card.css) */
+
+/* 다른 이유 (인용 + 01·02·03 카드) */
+html[data-theme="i-mylight"] .section--i-diff {
+  background: var(--bg);
+  overflow: visible;
+}
+html[data-theme="i-mylight"] .section--i-diff .container {
+  overflow: visible;
+}
+
+/* Quote 공통 */
+html[data-theme="i-mylight"] .i-diff__quote {
+  margin: 0;
+}
+html[data-theme="i-mylight"] .i-diff__quote p {
+  margin: 0 0 12px;
+}
+html[data-theme="i-mylight"] .i-diff__quote cite {
+  font-size: 13px;
+  font-style: normal;
+  display: block;
+}
+
+/* A · 큰 따옴표 */
+html[data-theme="i-mylight"] .i-diff__quote--a {
+  position: relative;
+  padding: 48px 24px 88px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+}
+html[data-theme="i-mylight"] .i-diff__quote--a::before {
+  content: '\201C';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Noto Serif KR', serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-warm);
+  opacity: 0.22;
+  pointer-events: none;
+}
+html[data-theme="i-mylight"] .i-diff__quote--a::after {
+  content: '\201D';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Noto Serif KR', serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-warm);
+  opacity: 0.22;
+  pointer-events: none;
+}
+html[data-theme="i-mylight"] .i-diff__quote--a p {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: calc(17px - 1pt);
+  font-weight: 600;
+  line-height: 1.72;
+  color: var(--ink);
+}
+@media (min-width: 768px) {
+  html[data-theme="i-mylight"] .i-diff__quote--a p {
+    font-size: calc(17px * 1.2 - 1pt);
+  }
+}
+html[data-theme="i-mylight"] .i-diff__quote--a cite {
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 22px;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  html[data-theme="i-mylight"] .i-diff__quote--a cite {
+    font-size: 15px;
+  }
+}
+

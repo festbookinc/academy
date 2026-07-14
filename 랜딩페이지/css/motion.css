@@ -1,0 +1,148 @@
+/* ═══════════════════════════════════════
+   Landing — motion.css
+   html[data-motion="on"] 일 때만 활성
+═══════════════════════════════════════ */
+
+:root {
+  --m-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Motion OFF ── */
+html[data-motion="off"] [data-a],
+html[data-motion="off"] [data-m] {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+html[data-motion="off"] .hero__bg img {
+  animation: none !important;
+  transform: none !important;
+}
+
+/* ── Scroll reveal (data-a) ── */
+html[data-motion="on"] [data-a] {
+  opacity: 0;
+  transition:
+    opacity 0.7s var(--m-ease),
+    transform 0.7s var(--m-ease),
+    filter 0.65s var(--m-ease);
+}
+
+html[data-motion="on"] [data-a="up"]    { transform: translateY(28px); }
+html[data-motion="on"] [data-a="down"]  { transform: translateY(-16px); }
+html[data-motion="on"] [data-a="left"]  { transform: translateX(-28px); }
+html[data-motion="on"] [data-a="right"] { transform: translateX(28px); }
+html[data-motion="on"] [data-a="fade"]  { transform: none; }
+
+html[data-motion="on"] [data-a].is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+html[data-motion="on"] [data-a][data-d="1"] { transition-delay: 0.07s; }
+html[data-motion="on"] [data-a][data-d="2"] { transition-delay: 0.14s; }
+html[data-motion="on"] [data-a][data-d="3"] { transition-delay: 0.21s; }
+html[data-motion="on"] [data-a][data-d="4"] { transition-delay: 0.28s; }
+html[data-motion="on"] [data-a][data-d="5"] { transition-delay: 0.35s; }
+
+/* ── Hero entrance (data-m="in") ── */
+html[data-motion="on"] [data-m="in"] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.9s var(--m-ease),
+    transform 0.9s var(--m-ease),
+    filter 0.9s var(--m-ease);
+}
+
+html[data-motion="on"] [data-m="in"][data-d="1"] { transition-delay: 0.40s; }
+html[data-motion="on"] [data-m="in"][data-d="2"] { transition-delay: 0.55s; }
+html[data-motion="on"] [data-m="in"][data-d="3"] { transition-delay: 0.70s; }
+html[data-motion="on"] [data-m="in"][data-d="4"] { transition-delay: 0.82s; }
+html[data-motion="on"] [data-m="in"][data-d="5"] { transition-delay: 0.95s; }
+html[data-motion="on"] [data-m="in"][data-d="6"] { transition-delay: 1.40s; }
+
+html[data-motion="on"] [data-m="in"].is-loaded {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Hero bg zoom — i-mylight */
+html[data-motion="on"][data-dir="i-mylight"] .hero__bg img,
+html[data-motion="on"][data-dir="i-mylight"] .hero__poster,
+html[data-motion="on"][data-theme="i-mylight"] .hero__bg img,
+html[data-motion="on"][data-theme="i-mylight"] .hero__poster,
+html[data-motion="on"][data-dir="i-mylight"] .hero__video.is-active,
+html[data-motion="on"][data-theme="i-mylight"] .hero__video.is-active {
+  animation: labHeroZoom 18s var(--m-ease) forwards;
+}
+
+@keyframes labHeroZoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="i-mylight"] .promise-card {
+    transition: none !important;
+  }
+}
+
+/* ── Stats band — mobile: no rise on appear ── */
+@media (max-width: 719px) {
+  html[data-motion="on"] .stats-band .stat-cell[data-a] {
+    transform: none !important;
+  }
+}
+
+/* ── Bookstore carousel — horizontal loop only, no scroll reveal ── */
+html[data-motion="on"] #bookstore-carousel .i-bookstore__photo {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* ── OT dialogue — word reveal ── */
+html[data-motion="on"] .ot-dialogue .ot-word {
+  opacity: 0;
+  transform: translateY(0.06em);
+  display: inline;
+}
+
+html[data-motion="on"] .ot-dialogue .quote-block.is-typing .ot-word {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.22s var(--m-ease),
+    transform 0.22s var(--m-ease);
+  transition-delay: calc(var(--ot-i, 0) * 42ms);
+}
+
+html[data-motion="off"] .ot-dialogue .ot-word {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-motion="on"] [data-a],
+  html[data-motion="on"] [data-m="in"],
+  html[data-motion="on"] .hero__bg[data-m="hero-bg"] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  html[data-motion="on"] .ot-dialogue .ot-word {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

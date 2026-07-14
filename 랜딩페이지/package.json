@@ -1,0 +1,8 @@
+{
+  "name": "festbook-landing",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-html.mjs",
+    "check": "node scripts/check-html.mjs"
+  }
+}

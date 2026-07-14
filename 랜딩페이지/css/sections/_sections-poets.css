@@ -1,0 +1,163 @@
+/* 작가 검증 · 시인 캐러셀 */
+html[data-theme="i-mylight"] .i-poets {
+  --i-poets-bg: #12151c;
+  --i-poets-fg: rgba(255, 255, 255, 0.9);
+  --i-poets-fg-soft: rgba(255, 255, 255, 0.74);
+  --i-poets-hl: var(--accent-warm, #d4a843);
+  --i-poets-line: rgba(255, 255, 255, 0.12);
+  width: 100%;
+  max-width: none;
+  margin: 18px 0 40px;
+  padding: 28px 24px 24px;
+  background: var(--i-poets-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  color: var(--i-poets-fg);
+}
+html[data-theme="i-mylight"] .i-poets .i-verify__badge {
+  margin-bottom: 18px;
+  padding: 8px 18px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--i-poets-fg);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+html[data-theme="i-mylight"] .i-poets__hl {
+  color: var(--i-poets-hl);
+}
+html[data-theme="i-mylight"] .hl-mark {
+  background-image: linear-gradient(transparent 42%, rgba(var(--accent-warm-rgb), 0.42) 42%);
+  background-repeat: no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+html[data-theme="i-mylight"] .ot-dialogue .hl-mark {
+  background-size: 0% 100%;
+  background-position: left bottom;
+  transition: background-size 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html[data-theme="i-mylight"] .ot-dialogue .hl-mark.is-revealed {
+  background-size: 100% 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="i-mylight"] .ot-dialogue .hl-mark {
+    transition: none;
+  }
+}
+html[data-theme="i-mylight"] .i-poets-carousel {
+  margin: 0 0 16px;
+}
+html[data-theme="i-mylight"] .i-poets-carousel__controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+html[data-theme="i-mylight"] .i-poets-carousel__viewport {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  min-height: 220px;
+}
+html[data-theme="i-mylight"] .i-poets-carousel__arrow {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.42);
+  cursor: pointer;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+html[data-theme="i-mylight"] .i-poets-carousel__arrow:hover {
+  color: var(--i-poets-hl);
+  opacity: 0.9;
+}
+html[data-theme="i-mylight"] .i-poets-carousel__icon {
+  display: block;
+  width: 10px;
+  height: 24px;
+}
+html[data-theme="i-mylight"] .i-poets-carousel__track {
+  position: relative;
+}
+html[data-theme="i-mylight"] .i-poets-card {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px 8px 0;
+  transition:
+    opacity 0.55s cubic-bezier(0.33, 1, 0.68, 1),
+    visibility 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+}
+html[data-theme="i-mylight"] .i-poets-card.is-active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+html[data-theme="i-mylight"] .i-poets-card__name {
+  margin: 0 0 14px;
+  font-size: clamp(20px, 4.6vw, 26px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--i-poets-hl);
+  text-align: center;
+}
+html[data-theme="i-mylight"] .i-poets-card__quote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+}
+html[data-theme="i-mylight"] .i-poets-card__quote p {
+  margin: 0;
+  font-size: var(--card-body-size);
+  line-height: 1.72;
+  color: var(--i-poets-fg-soft);
+  font-style: normal;
+  word-break: keep-all;
+}
+html[data-theme="i-mylight"] .i-poets-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+html[data-theme="i-mylight"] .i-poets-carousel__dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+html[data-theme="i-mylight"] .i-poets-carousel__dot.is-active {
+  background: var(--i-poets-hl);
+  transform: scale(1.25);
+}
+html[data-theme="i-mylight"] .i-poets__foot {
+  font-size: var(--card-body-size);
+  color: var(--i-poets-fg);
+  text-align: center;
+  border-top: 1px solid var(--i-poets-line);
+  padding-top: 14px;
+}

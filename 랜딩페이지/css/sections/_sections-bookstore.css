@@ -1,0 +1,77 @@
+/* 서점 사진 — Infinite Loop Carousel */
+html[data-theme="i-mylight"] .section--i-bookstore {
+  background: var(--bg-soft-blue);
+}
+html[data-theme="i-mylight"] .i-bookstore-carousel__viewport {
+  overflow: hidden;
+  width: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+}
+html[data-theme="i-mylight"] .i-bookstore-carousel__viewport.is-loop-active {
+  cursor: grab;
+  touch-action: pan-y pinch-zoom;
+}
+html[data-theme="i-mylight"] .i-bookstore-carousel__viewport.is-loop-active.is-dragging {
+  cursor: grabbing;
+}
+html[data-theme="i-mylight"] .i-bookstore-carousel__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+html[data-theme="i-mylight"] .i-bookstore-carousel__set {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+  padding-right: 14px;
+}
+html[data-theme="i-mylight"] .i-bookstore-carousel__set .i-bookstore__photo {
+  flex: 0 0 clamp(240px, 72vw, 300px);
+  width: clamp(240px, 72vw, 300px);
+}
+html[data-theme="i-mylight"] .i-bookstore-carousel.is-static .i-bookstore-carousel__viewport {
+  overflow: visible;
+  max-width: var(--container-max, 768px);
+  margin: 0 auto;
+}
+html[data-theme="i-mylight"] .i-bookstore-carousel.is-static .i-bookstore-carousel__track {
+  width: 100%;
+  transform: none !important;
+}
+html[data-theme="i-mylight"] .i-bookstore-carousel.is-static .i-bookstore-carousel__set {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  width: 100%;
+  padding-right: 0;
+}
+@media (min-width: 640px) {
+  html[data-theme="i-mylight"] .i-bookstore-carousel.is-static .i-bookstore-carousel__set {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  html[data-theme="i-mylight"] .i-bookstore-carousel.is-static .i-bookstore-carousel__set .i-bookstore__photo {
+    flex: none;
+    width: auto;
+  }
+}
+html[data-theme="i-mylight"] .i-bookstore__photo {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+html[data-theme="i-mylight"] .i-bookstore__photo img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+html[data-theme="i-mylight"] .i-bookstore__photo figcaption {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  padding: 10px 12px 12px;
+  text-align: center;
+}
