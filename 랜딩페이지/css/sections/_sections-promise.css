@@ -132,12 +132,12 @@ html[data-theme="i-mylight"] .section--i-promise .i-diff__media img {
     align-items: center;
   }
   html[data-theme="i-mylight"] .section--i-promise .i-diff__main--l2 {
-    grid-template-columns: 1fr 90px;
+    grid-template-columns: 1fr 120px;
     align-items: center;
   }
   html[data-theme="i-mylight"] .section--i-promise .i-diff__media {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     aspect-ratio: 1 / 1;
   }
 }
