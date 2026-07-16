@@ -44,6 +44,9 @@ html[data-theme="i-mylight"] .site-footer__brand {
 html[data-theme="i-mylight"] .site-footer__meta {
   font-size: 13px;
   line-height: 1.7;
+  text-align: justify;
+  text-align-last: justify;
+  word-break: keep-all;
 }
 html[data-theme="i-mylight"] .site-footer a {
   color: rgba(255, 255, 255, 0.9);
