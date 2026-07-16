@@ -41,12 +41,19 @@ html[data-theme="i-mylight"] .site-footer__brand {
   color: #fff;
   margin-bottom: 10px;
 }
+html[data-theme="i-mylight"] .site-footer__legal {
+  text-align: left;
+}
 html[data-theme="i-mylight"] .site-footer__meta {
-  font-size: 13px;
-  line-height: 1.7;
-  text-align: justify;
-  text-align-last: justify;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.65;
+  text-align: left;
   word-break: keep-all;
+}
+html[data-theme="i-mylight"] .site-footer__meta strong {
+  font-weight: 700;
+  color: #fff;
 }
 html[data-theme="i-mylight"] .site-footer a {
   color: rgba(255, 255, 255, 0.9);
